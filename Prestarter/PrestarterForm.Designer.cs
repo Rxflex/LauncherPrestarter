@@ -55,7 +55,7 @@
             this.logoLabel.Name = "logoLabel";
             this.logoLabel.Size = new System.Drawing.Size(236, 37);
             this.logoLabel.TabIndex = 1;
-            this.logoLabel.Text = "GravitLauncher";
+            this.logoLabel.Text = "DarknessLauncher";
             // 
             // statusLabel
             // 
@@ -105,7 +105,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PrestarterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GravitLauncher Prestarter";
+            this.Text = "DarknessLauncher Prestarter";
             this.Load += new System.EventHandler(this.PrestarterForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PreStartedForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PreStartedForm_MouseMove);
