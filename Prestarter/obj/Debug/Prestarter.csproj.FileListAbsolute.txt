@@ -1,0 +1,10 @@
+/workspaces/LauncherPrestarter/Prestarter/bin/Debug/Prestarter.exe.config
+/workspaces/LauncherPrestarter/Prestarter/bin/Debug/Prestarter.exe
+/workspaces/LauncherPrestarter/Prestarter/bin/Debug/Prestarter.pdb
+/workspaces/LauncherPrestarter/Prestarter/obj/Debug/Prestarter.csproj.AssemblyReference.cache
+/workspaces/LauncherPrestarter/Prestarter/obj/Debug/Prestarter.PrestarterForm.resources
+/workspaces/LauncherPrestarter/Prestarter/obj/Debug/Prestarter.Properties.Resources.resources
+/workspaces/LauncherPrestarter/Prestarter/obj/Debug/Prestarter.csproj.GenerateResource.cache
+/workspaces/LauncherPrestarter/Prestarter/obj/Debug/Prestarter.csproj.CoreCompileInputs.cache
+/workspaces/LauncherPrestarter/Prestarter/obj/Debug/Prestarter.exe
+/workspaces/LauncherPrestarter/Prestarter/obj/Debug/Prestarter.pdb
