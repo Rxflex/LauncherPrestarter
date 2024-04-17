@@ -94,7 +94,7 @@ namespace Prestarter
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message, "GravitLauncher Prestarter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(e.Message, "Darkness Prestarter", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 Environment.Exit(0);

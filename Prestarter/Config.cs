@@ -4,10 +4,10 @@ namespace Prestarter
 {
     internal class Config
     {
-        public static string Project = "Minecraft";
+        public static string Project = "Darkness";
         public static string Version = "0.1.0";
 
-        public static string LauncherDownloadUrl = null;
+        public static string LauncherDownloadUrl = "http://launcher.darkness.cc/Launcher.jar";
         
         public static bool DownloadQuestionEnabled = true;
         
