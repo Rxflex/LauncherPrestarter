@@ -1,4 +1,4 @@
-name: .NET Core Desktop
+name: .NET Framework Desktop
 
 on:
   push:
@@ -7,9 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-
   build:
-
     strategy:
       matrix:
         configuration: [Debug, Release]
@@ -17,8 +15,7 @@ jobs:
     runs-on: windows-latest
 
     env:
-      Solution_Name: Prestarter                      # Название вашего решения, например, MyWpfApp.sln.
-      Test_Project_Path: Prestarter/Prestarter       # Путь к вашему тестовому проекту, например, MyWpfApp.Tests/MyWpfApp.Tests.csproj.
+      Solution_Name: Prestarter.sln                  # Название вашего решения, например, MyWpfApp.sln.
 
     steps:
     - name: Checkout
@@ -26,19 +23,15 @@ jobs:
       with:
         fetch-depth: 0
 
-    # Install the .NET Core workload
-    - name: Install .NET Core
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 4.5.x
+    # Install the .NET Framework Developer Pack for 4.5.1
+    - name: Install .NET Framework 4.5.1 Developer Pack
+      run: |
+        choco install netfx-4.5.1-devpack -y
+      shell: powershell
 
     # Add MSBuild to the PATH
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v2
-
-    # Execute all unit tests in the solution
-    - name: Execute unit tests
-      run: dotnet test
 
     # Restore the application
     - name: Restore the application
@@ -54,7 +47,7 @@ jobs:
 
     # Publish the application
     - name: Publish the application
-      run: dotnet publish $env:Solution_Name -c ${{ matrix.configuration }} -o ./output
+      run: msbuild $env:Solution_Name /t:Publish /p:Configuration=$env:Configuration /p:OutputPath=./output
       env:
         Configuration: ${{ matrix.configuration }}
 
