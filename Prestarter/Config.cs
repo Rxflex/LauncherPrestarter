@@ -4,10 +4,10 @@ namespace Prestarter
 {
     internal class Config
     {
-        public static string Project = "Lump";
+        public static string Project = "NekoLand";
         public static string Version = "0.1.0";
 
-        public static string LauncherDownloadUrl = "http://launcher.lump.digital:9274/LumpLauncher.jar";
+        public static string LauncherDownloadUrl = "https://launcher.nekoland.io/Launcher.jar";
         
         public static bool DownloadQuestionEnabled = true;
         
