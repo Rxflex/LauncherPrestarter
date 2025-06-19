@@ -15,7 +15,7 @@ jobs:
     runs-on: windows-latest
 
     env:
-      Solution_Name: Prestarter.sln                  # Название вашего решения, например, MyWpfApp.sln.
+      Solution_Name: Prestarter.sln
 
     steps:
     - name: Checkout
@@ -23,37 +23,31 @@ jobs:
       with:
         fetch-depth: 0
 
-    # Install the .NET Framework Developer Pack for 4.5.1
     - name: Install .NET Framework 4.5.1 Developer Pack
       run: |
         choco install netfx-4.5.1-devpack -y
       shell: powershell
 
-    # Add MSBuild to the PATH
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v2
 
-    # Restore the application
     - name: Restore the application
       run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
       env:
         Configuration: ${{ matrix.configuration }}
 
-    # Build the application
     - name: Build the application
       run: msbuild $env:Solution_Name /p:Configuration=$env:Configuration
       env:
         Configuration: ${{ matrix.configuration }}
 
-    # Publish the application
     - name: Publish the application
       run: msbuild $env:Solution_Name /t:Publish /p:Configuration=$env:Configuration /p:OutputPath=./output
       env:
         Configuration: ${{ matrix.configuration }}
 
-    # Upload the build artifacts
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Build Artifacts
         path: .
